@@ -1,4 +1,3 @@
-
 // Form submission handling
 const contactForm = document.getElementById('contact-form');
 const formMessage = document.getElementById('form-message');
@@ -35,25 +34,25 @@ function openModal(projectId) {
     if (!project) return;
 
     modalContent.innerHTML = `
-        <h3 class="text-2xl font-bold text-white mb-2 text-center">${project.title}</h3>
-        <p class="text-gray-400 text-sm mb-4 text-center">${project.description}</p>
-
-        <div class="carousel-container">
-            <div class="carousel-slides" style="transform: translateX(0);">
-                ${project.images.map(imgSrc => `
+                <h3 class="text-2xl font-bold text-white mb-2 text-center">${project.title}</h3>
+                <p class="text-gray-400 text-sm mb-4 text-center">${project.description}</p>
+                
+                <div class="carousel-container">
+                    <div class="carousel-slides" style="transform: translateX(0);">
+                        ${project.images.map(imgSrc => `
                             <div class="carousel-slide">
                                 <img src="${imgSrc}" alt="Imagem do projeto ${project.title}">
                             </div>
                         `).join('')}
-            </div>
-            <button class="carousel-prev">&#10094;</button>
-            <button class="carousel-next">&#10095;</button>
-        </div>
-
-        <div class="text-center mt-4">
-            <a href="${project.liveLink}" target="_blank" class="btn-primary inline-block text-sm py-2 px-4">Ver Projeto Online</a>
-        </div>
-        `;
+                    </div>
+                    <button class="carousel-prev">&#10094;</button>
+                    <button class="carousel-next">&#10095;</button>
+                </div>
+                
+                <div class="text-center mt-4">
+                    <a href="${project.liveLink}" target="_blank" class="btn-primary inline-block text-sm py-2 px-4">Ver Projeto Online</a>
+                </div>
+            `;
 
     projectModal.style.display = "flex";
     setupCarousel();
