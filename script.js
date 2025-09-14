@@ -24,6 +24,33 @@ const projects = {
             "ImagensAdocique/ado4.png"
         ],
         liveLink: "https://github.com/SeuUsuario/NomeDoRepositorio.git"
+    },
+    "blogpessoal": {
+        title: "Blog Pessoal",
+        description: "<b>Desafio:</b> Criar uma plataforma pessoal de escrita com layout responsivo e fácil de usar. <br><br><b>Solução:</b> Blog pessoal criado do zero, com posts em Markdown, sistema de comentários e design adaptável para qualquer dispositivo. <br><br><b>Impacto:</b> Plataforma de fácil manutenção e visualmente agradável, ideal para compartilhar conteúdo com agilidade.",
+        images: [
+            "https://placehold.co/600x400/1e293b/d1d5db?text=Blog+Pessoal"
+        ],
+        liveLink: "#"
+    },
+    "sistemagestao": {
+        title: "Sistema de Gestão de Clientes",
+        description: "<b>Desafio:</b> Oferecer uma forma mais eficiente de gerenciar clientes e rastrear vendas.<br><br><b>Solução:</b> Desenvolvemos um sistema web com dashboards interativos e relatórios de vendas. <br><br><b>Impacto:</b> Clientes podem tomar decisões baseadas em dados de forma mais ágil, melhorando a gestão do negócio.",
+        images: [
+            "https://placehold.co/600x400/1e293b/d1d5db?text=Sistema+Web"
+        ],
+        liveLink: "#"
+    },
+    "dashboardkpis": {
+        title: "Dashboard de Acompanhamento de KPIs",
+        description: "<b>Desafio:</b> Fornecer uma visão executiva clara sobre metas e funis de conversão para otimizar o tempo gasto com relatórios. <br><br><b>Solução:</b> Criação de um dashboard interativo com KPIs, funil e gráficos de metas versus resultados. <br><br><b>Impacto:</b> Redução do tempo gasto com relatórios em 35% e aumento da taxa de conversão em 22%, permitindo decisões mais rápidas.",
+        images: [
+            "ImagensDash/dash1.png",
+            "ImagensDash/dash2.png",
+            "ImagensDash/dash3.png",
+            "ImagensDash/dash4.png"
+        ],
+        liveLink: "#"
     }
 };
 

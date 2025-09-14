@@ -49,6 +49,22 @@ body {
     background-color: #0d8dbd;
 }
 
+/* Estilo para o botão do WhatsApp */
+.btn-whatsapp {
+    background-image: linear-gradient(90deg, #25D366, #128C7E);
+    color: white;
+    padding: 1rem 2rem;
+    border-radius: 9999px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-whatsapp:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
 /* Modal e Carrossel */
 .modal {
     display: none;
