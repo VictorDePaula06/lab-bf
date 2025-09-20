@@ -15,43 +15,56 @@
 
 <body class="bg-[#0c0c16] text-gray-200">
 
-    <!-- Header com navegação e botão do WhatsApp -->
-    <header class="bg-[#0c0c16] fixed w-full z-50 py-4 shadow-lg">
-        <div class="container mx-auto px-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <img src="Logo/logoSemFundo.png" alt="BitFellow Logo" class="h-12 w-12">
-            </div>
-            <nav class="hidden md:flex space-x-8 text-lg font-medium text-gray-400">
-                <a href="#about" class="hover:text-[#00c7e5] transition-colors">Sobre</a>
-                <a href="#services" class="hover:text-[#00c7e5] transition-colors">Serviços</a>
-                <a href="#portfolio" class="hover:text-[#00c7e5] transition-colors">Projetos</a>
-                <a href="#contact" class="hover:text-[#00c7e5] transition-colors">Contato</a>
-            </nav>
-            <a href="https://wa.me/seunumerodetelefone" class="btn-whatsapp flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 16 16">
-                    <path
-                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.56.064 7.928c0 1.399.366 2.76 1.057 3.965L.05 15.939l4.475-1.176a7.585 7.585 0 0 0 3.923 1.041c4.365 0 7.928-3.56 7.932-7.925.003-1.399-.364-2.76-1.055-3.965L14.71 1.288zm-1.157 1.832c-.789-.861-1.614-1.393-2.477-1.636-.583-.165-1.2-.248-1.821-.248-.847 0-1.642.155-2.396.452-.754.296-1.442.716-2.062 1.258-.62.541-1.12 1.168-1.503 1.88-.383.712-.575 1.492-.575 2.348-.003 1.054.218 2.067.653 2.99.435.923 1.045 1.705 1.764 2.302.72.597 1.554 1.066 2.477 1.39.923.324 1.895.485 2.915.485h.003c.847 0 1.642-.155 2.396-.452.754-.296 1.442-.716 2.062-1.258.62-.541 1.12-1.168 1.503-1.88.383-.712.575-1.492.575-2.348-.003-1.054-.218-2.067-.653-2.99-.435-.923-1.045-1.705-1.764-2.302-.72-.597-1.554-1.066-2.477-1.39-.923-.324-1.895-.485-2.915-.485z" />
-                </svg>
-                <span>WhatsApp agora</span>
-            </a>
-        </div>
-    </header>
+   <!-- Header com navegação centralizada e botão do WhatsApp -->
+<header class="bg-[#0c0c16] fixed w-full z-50 py-4 shadow-lg">
+  <div class="container mx-auto px-4 flex justify-between items-center">
+    
+    <!-- Logo -->
+    <div class="flex items-center space-x-2">
+    <img src="Logo/logo-white-semfundo.png" alt="BitFellow Logo" class="h-40 w-auto -my-10">
+</div>
+
+    <!-- Navegação centralizada -->
+    <nav class="absolute left-1/2 transform -translate-x-1/2 hidden md:flex space-x-8 text-lg font-medium text-gray-400">
+      <a href="#about" class="hover:text-[#00c7e5] transition-colors">Sobre</a>
+      <a href="#services" class="hover:text-[#00c7e5] transition-colors">Serviços</a>
+      <a href="#portfolio" class="hover:text-[#00c7e5] transition-colors">Projetos</a>
+      <a href="#contact" class="hover:text-[#00c7e5] transition-colors">Contato</a>
+    </nav>
+
+    <!-- Botão WhatsApp -->
+    <a href="https://wa.me/seunumerodetelefone" class="btn-whatsapp flex items-center space-x-2 bg-green-500 text-white px-4 py-2 rounded-full shadow hover:bg-green-600 transition">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.56.064 7.928c0 1.399.366 2.76 1.057 3.965L.05 15.939l4.475-1.176a7.585 7.585 0 0 0 3.923 1.041c4.365 0 7.928-3.56 7.932-7.925.003-1.399-.364-2.76-1.055-3.965L14.71 1.288zm-1.157 1.832c-.789-.861-1.614-1.393-2.477-1.636-.583-.165-1.2-.248-1.821-.248-.847 0-1.642.155-2.396.452-.754.296-1.442.716-2.062 1.258-.62.541-1.12 1.168-1.503 1.88-.383.712-.575 1.492-.575 2.348-.003 1.054.218 2.067.653 2.99.435.923 1.045 1.705 1.764 2.302.72.597 1.554 1.066 2.477 1.39.923.324 1.895.485 2.915.485h.003c.847 0 1.642-.155 2.396-.452.754-.296 1.442-.716 2.062-1.258.62-.541 1.12-1.168 1.503-1.88.383-.712.575-1.492.575-2.348-.003-1.054-.218-2.067-.653-2.99-.435-.923-1.045-1.705-1.764-2.302-.72-.597-1.554-1.066-2.477-1.39-.923-.324-1.895-.485-2.915-.485z"/>
+      </svg>
+      <span>WhatsApp agora</span>
+    </a>
+  </div>
+</header>
 
     <!-- Hero Section -->
-    <section class="min-h-screen flex items-center justify-center text-center p-8 bg-black bg-opacity-50">
-        <div class="max-w-4xl mx-auto space-y-6">
-            <div class="flex flex-col items-center justify-center mb-6">
-                <img src="Logo/logoSimples.png" alt="BitFellow Logo" class="h-64 w-64">
-                <h1 class="text-5xl md:text-7xl font-extrabold text-white">
-                    Bit<span class="gradient-text">Fellow</span>
-                </h1>
-                <p class="text-xl md:text-3xl text-gray-400 mt-4 max-w-2xl mx-auto">
-                    Full Stack Development
-                </p>
-            </div>
-            <a href="#portfolio" class="btn-primary mt-8 inline-block">Conheça Nossos Projetos</a>
-        </div>
-    </section>
+<section class="min-h-screen flex items-center justify-center text-center p-8 bg-black bg-opacity-50">
+  <div class="max-w-3xl mx-auto space-y-4"> <!-- reduzido de space-y-6 para space-y-4 -->
+    
+    <div class="flex flex-col items-center justify-center mb-2"> <!-- reduzido o margin-bottom -->
+      <img src="Logo/logoSimples.png" alt="BitFellow Logo" class="h-80 w-80"> <!-- menor: antes era h-64 -->
+      
+      
+      <h1 class="text-4xl md:text-6xl font-extrabold text-white"> <!-- menor -->
+        Bit<span class="gradient-text">Fellow</span>
+      </h1>
+      
+      <p class="text-lg md:text-2xl text-gray-400 max-w-xl mx-auto"> <!-- menor e menos espaçamento -->
+        Full Stack Development
+      </p>
+    </div>
+
+    <a href="#portfolio" class="btn-primary inline-block"> <!-- antes era mt-8 -->
+      Conheça Nossos Projetos
+    </a>
+  </div>
+</section>
+
 
     <!-- About Section -->
     <section id="about" class="py-20 px-4 bg-[#1a1a2e]">
@@ -292,6 +305,14 @@
             </div>
         </div>
     </section>
+
+    <a href="https://wa.me/351911111111" 
+   class="whatsapp-button" 
+   target="_blank" 
+   aria-label="Conversar no WhatsApp">
+   <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" 
+        alt="WhatsApp" />
+</a>
 
     <!-- Footer -->
     <footer class="bg-gray-800 py-6 text-center text-gray-500 text-sm border-t border-gray-700">
