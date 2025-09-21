@@ -13,6 +13,8 @@ const projectModal = document.getElementById("projectModal");
 const modalContent = document.getElementById("modal-content-container");
 const closeModalBtn = document.querySelector(".close");
 
+
+
 const projects = {
     "adocique": {
         title: "Adociquê - Site de Páscoa",
