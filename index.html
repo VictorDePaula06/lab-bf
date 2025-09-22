@@ -8,9 +8,9 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com"/>
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap" rel="stylesheet"/>
 
-  <!-- Tailwind utilitário -->
+  <!-- Tailwind utility (opcional, mantivemos) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Styles -->
@@ -19,60 +19,67 @@
 
 <body class="bg-surface text-slate-800 antialiased">
   <!-- Header -->
-  <header class="site-header fixed w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+  <header class="site-header header--dark fixed w-full z-50">
     <div class="container mx-auto px-4">
       <div class="h-16 flex items-center justify-between">
         <!-- Logo -->
         <a href="#" class="flex items-center gap-3">
-          <img src="Logo/logo-white-semfundo.png" alt="BitFellow Logo" class="h-10 w-auto"/>
-          <span class="font-display text-lg tracking-tight">Bit<span class="gradient-text">Fellow</span></span>
+          <img src="Logo/logo-white-semfundo.png" alt="BitFellow Logo" class="logo-img h-10 w-auto"/>
+          <span class="brand-name font-display text-lg tracking-tight">Bit<span class="gradient-text">Fellow</span></span>
         </a>
 
-        <!-- Nav (ordem com Sobre logo após Hero) -->
-        <nav class="hidden md:flex items-center gap-8 text-[0.98rem] font-medium text-slate-600">
+        <!-- Nav -->
+        <nav class="main-nav hidden md:flex items-center gap-8 text-[0.98rem] font-medium">
           <a href="#about" class="nav-link">Sobre</a>
           <a href="#solutions" class="nav-link">Soluções</a>
           <a href="#portfolio" class="nav-link">Projetos</a>
           <a href="#contact" class="nav-link">Contato</a>
         </nav>
 
-        <!-- CTA topo -> WhatsApp verde com ícone -->
-        <a href="https://wa.me/5521999743004" target="_blank" class="btn-whats-top">
-          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.52 3.47A10.92 10.92 0 0 0 12.07 0C5.6 0 .36 5.22.34 11.68c0 1.67.37 3.27 1.1 4.77L0 24l7.7-2.02a11.7 11.7 0 0 0 4.36.83h.01c6.47 0 11.74-5.22 11.77-11.68.02-3.14-1.2-6.08-3.32-8.16Zm-8.45 18.1h-.01a9.8 9.8 0 0 1-4.2-.97l-.3-.14-4.56 1.2 1.22-4.45-.16-.31a9.68 9.68 0 0 1-1.2-4.73c.03-5.32 4.37-9.63 9.69-9.63 2.58 0 5 1 6.82 2.8a9.54 9.54 0 0 1 2.83 6.77c-.03 5.32-4.37 9.66-9.68 9.66Zm5.6-7.27c-.31-.16-1.84-.9-2.12-1-.28-.1-.48-.16-.68.16-.2.31-.78.99-.95 1.19-.17.21-.35.23-.66.08-.31-.16-1.3-.48-2.48-1.54-.92-.82-1.55-1.84-1.73-2.15-.18-.31-.02-.48.13-.64.14-.14.31-.37.47-.55.16-.17.21-.31.31-.52.1-.21.06-.39-.03-.55-.08-.16-.68-1.64-.93-2.24-.24-.58-.49-.5-.68-.5h-.58c-.2 0-.52.07-.8.39-.28.31-1.05 1.03-1.05 2.51 0 1.47 1.08 2.9 1.23 3.1.16.2 2.12 3.24 5.13 4.55.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.84-.75 2.1-1.47.26-.72.26-1.35.18-1.47-.08-.12-.28-.2-.6-.36Z"/></svg>
+        <!-- CTA topo (WhatsApp) -->
+        <a href="#" id="ctaTopWhats" class="btn-whats-top" aria-label="Entrar em contato no WhatsApp">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor" d="M20.52 3.47A10.92 10.92 0 0 0 12.07 0C5.6 0 .36 5.22.34 11.68c0 1.67.37 3.27 1.1 4.77L0 24l7.7-2.02a11.7 11.7 0 0 0 4.36.83h.01c6.47 0 11.74-5.22 11.77-11.68.02-3.14-1.2-6.08-3.32-8.16Zm-8.45 18.1h-.01a9.8 9.8 0 0 1-4.2-.97l-.3-.14-4.56 1.2 1.22-4.45-.16-.31a9.68 9.68 0 0 1-1.2-4.73c.03-5.32 4.37-9.63 9.69-9.63 2.58 0 5 1 6.82 2.8a9.54 9.54 0 0 1 2.83 6.77c-.03 5.32-4.37 9.66-9.68 9.66Zm5.6-7.27c-.31-.16-1.84-.9-2.12-1-.28-.1-.48-.16-.68.16-.2.31-.78.99-.95 1.19-.17.21-.35.23-.66.08-.31-.16-1.3-.48-2.48-1.54-.92-.82-1.55-1.84-1.73-2.15-.18-.31-.02-.48.13-.64.14-.14.31-.37.47-.55.16-.17.21-.31.31-.52.1-.21.06-.39-.03-.55-.08-.16-.68-1.64-.93-2.24-.24-.58-.49-.5-.68-.5h-.58c-.2 0-.52.07-.8.39-.28.31-1.05 1.03-1.05 2.51 0 1.47 1.08 2.9 1.23 3.1.16.2 2.12 3.24 5.13 4.55.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.84-.75 2.1-1.47.26-.72.26-1.35.18-1.47-.08-.12-.28-.2-.6-.36Z"/>
+          </svg>
           Entrar em contato
         </a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
+  <!-- Hero com vídeo -->
   <section class="hero relative overflow-hidden">
-    <div class="hero-blob -z-10"></div>
+    <video class="hero-video" src="Video/HeroSection.mp4" autoplay muted loop playsinline></video>
+    <div class="hero-overlay"></div>
+
     <div class="container mx-auto px-4">
-      <div class="max-w-6xl mx-auto text-center reveal">
-        <h1 class="font-display text-4xl md:text-6xl leading-[1.08] tracking-tight text-slate-900">
-          Tecnologia para <span class="gradient-text">acelerar resultados</span>
+      <div class="max-w-6xl mx-auto text-center hero-content">
+        <h1 class="hero-title font-display">
+          Tecnologia para <span class="gradient-text outline-light">acelerar resultados</span>
         </h1>
 
-        <p class="mt-4 text-slate-600 text-xl max-w-4xl mx-auto">
+        <p class="mt-4 text-slate-100/95 text-xl max-w-4xl mx-auto">
           Full Stack Development, Data & Analytics e Integrações. Da ideia ao deploy — com performance, UX e segurança.
         </p>
 
         <div class="mt-8 flex items-center gap-4 justify-center flex-wrap">
-          <a href="https://wa.me/5521999743004" target="_blank" class="btn-primary shine">Entrar em contato</a>
+          <a href="#" id="ctaHeroWhats" class="btn-primary shine">Entrar em contato</a>
           <a href="#portfolio" class="btn-ghost">Ver cases</a>
         </div>
 
         <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
-          <div class="pill">⚡ Time-to-market ágil</div>
-          <div class="pill">🛡️ Segurança e qualidade</div>
-          <div class="pill">📈 Dados transformados em decisões</div>
+          <div class="pill pill-dark">⚡ Time-to-market ágil</div>
+          <div class="pill pill-dark">🛡️ Segurança e qualidade</div>
+          <div class="pill pill-dark">📈 Dados em decisões</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- SOBRE (segunda sessão) -->
+  <!-- Sentinela para trocar o estado da header -->
+  <div id="headerSentinel"></div>
+
+  <!-- SOBRE (2ª sessão) -->
   <section id="about" class="section">
     <div class="container mx-auto px-4 max-w-6xl">
       <div class="section-head reveal text-center">
@@ -343,7 +350,7 @@
     </div>
   </section>
 
-  <!-- Footer centralizado, sem logo -->
+  <!-- Footer centralizado -->
   <footer class="py-8 border-t border-slate-200 bg-white">
     <div class="container mx-auto px-4">
       <p class="text-slate-500 text-sm text-center">
@@ -363,14 +370,14 @@
       <div id="modal-content-container" class="modal-body"></div>
       <div class="modal-actions">
         <a id="modalLink" href="#" target="_blank" class="btn-ghost">Ver Projeto Online</a>
-        <a href="https://wa.me/5521999743004" target="_blank" class="btn-primary">Entrar em contato</a>
+        <a href="#" id="modalWhats" target="_blank" class="btn-primary">Entrar em contato</a>
       </div>
     </div>
   </div>
 
   <!-- Assistente Virtual: Bit -->
   <button id="bit-toggle" class="bit-toggle" aria-label="Abrir assistente Bit">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" />
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt=""/>
   </button>
 
   <div id="bit-chat" class="bit-chat">
@@ -384,7 +391,10 @@
     </div>
 
     <div id="bit-messages" class="bit-messages">
-      <div class="msg bot">Oi! Eu sou o <b>Bit</b> 👋 Posso ajudar com serviços, prazos, orçamento e integrações. Você pode digitar, usar os atalhos ou iniciar o <b>modo assistido</b> para montar seu briefing.</div>
+      <div class="msg bot">
+        Oi! Eu sou o <b>Bit</b> 👋 Posso ajudar com serviços, prazos, orçamento e integrações.
+        Você pode digitar, usar os atalhos ou iniciar o <b>modo assistido</b> para montar seu briefing.
+      </div>
       <div class="bit-quick">
         <button class="quick" data-q="Quais serviços vocês oferecem?">Serviços</button>
         <button class="quick" data-q="Quanto tempo leva um site?">Prazos</button>
