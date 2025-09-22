@@ -1,344 +1,407 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BitFellow</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BitFellow</title>
 
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Tailwind utilitário -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css"/>
 </head>
 
-<body class="bg-[#0c0c16] text-gray-200">
-    <!-- Header transparente -->
-    <header class="w-full py-4 absolute top-0 left-0 z-50">
-        <div class="container mx-auto px-4 flex justify-between items-center">
+<body class="bg-surface text-slate-800 antialiased">
+  <!-- Header -->
+  <header class="site-header fixed w-full z-50 bg-white/90 backdrop-blur border-b border-slate-200">
+    <div class="container mx-auto px-4">
+      <div class="h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="Logo/logo-white-semfundo.png" alt="BitFellow Logo" class="h-10 w-auto"/>
+          <span class="font-display text-lg tracking-tight">Bit<span class="gradient-text">Fellow</span></span>
+        </a>
 
-            <!-- Logo -->
-            <div class="flex-1 flex justify-center md:justify-start">
-                <img src="Logo/logo-white-semfundo.png" alt="BitFellow Logo" class="h-40 w-auto -my-10">
-            </div>
+        <!-- Nav (ordem com Sobre logo após Hero) -->
+        <nav class="hidden md:flex items-center gap-8 text-[0.98rem] font-medium text-slate-600">
+          <a href="#about" class="nav-link">Sobre</a>
+          <a href="#solutions" class="nav-link">Soluções</a>
+          <a href="#portfolio" class="nav-link">Projetos</a>
+          <a href="#contact" class="nav-link">Contato</a>
+        </nav>
 
-            <!-- Navegação centralizada -->
-            <nav
-                class="absolute left-1/2 transform -translate-x-1/2 hidden md:flex space-x-8 text-lg font-medium text-white">
-                <a href="#about" class="hover:text-[#00c7e5] transition-colors">Sobre</a>
-                <a href="#services" class="hover:text-[#00c7e5] transition-colors">Serviços</a>
-                <a href="#portfolio" class="hover:text-[#00c7e5] transition-colors">Projetos</a>
-                <a href="#contact" class="hover:text-[#00c7e5] transition-colors">Contato</a>
-            </nav>
-
-            <!-- Botão WhatsApp -->
-            <a href="https://wa.me/seunumerodetelefone"
-                class="hidden md:flex items-center space-x-2 bg-[#00c7e5] text-white px-4 py-2 rounded-full shadow hover:bg-blue-400 transition">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 16 16">
-                    <path
-                        d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.56.064 7.928c0 1.399.366 2.76 1.057 3.965L.05 15.939l4.475-1.176a7.585 7.585 0 0 0 3.923 1.041c4.365 0 7.928-3.56 7.932-7.925.003-1.399-.364-2.76-1.055-3.965L14.71 1.288zm-1.157 1.832c-.789-.861-1.614-1.393-2.477-1.636-.583-.165-1.2-.248-1.821-.248-.847 0-1.642.155-2.396.452-.754.296-1.442.716-2.062 1.258-.62.541-1.12 1.168-1.503 1.88-.383.712-.575 1.492-.575 2.348-.003 1.054.218 2.067.653 2.99.435.923 1.045 1.705 1.764 2.302.72.597 1.554 1.066 2.477 1.39.923.324 1.895.485 2.915.485h.003c.847 0 1.642-.155 2.396-.452.754-.296 1.442-.716 2.062-1.258.62-.541 1.12-1.168 1.503-1.88.383-.712.575-1.492.575-2.348-.003-1.054-.218-2.067-.653-2.99-.435-.923-1.045-1.705-1.764-2.302-.72-.597-1.554-1.066-2.477-1.39-.923-.324-1.895-.485-2.915-.485z" />
-                </svg>
-                <span>Fale Conosco</span>
-            </a>
-        </div>
-    </header>
-
-
-
-    <!-- Hero Section com Vídeo -->
-    <section class="relative min-h-screen flex items-center justify-center text-center bg-black">
-
-        <!-- Vídeo de fundo -->
-        <video autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover opacity-60">
-            <source src="Video/HeroSection.mp4" type="video/mp4">
-
-        </video>
-
-        <!-- Overlay escuro (para melhorar contraste do texto) -->
-        <div class="absolute inset-0 bg-black/50"></div>
-
-        <!-- Conteúdo -->
-        <div class="relative z-10 max-w-4xl mx-auto px-6">
-            <h1 class="text-4xl md:text-6xl font-extrabold text-white leading-tight">
-                Especialistas em <span class="gradient-text">desenvolvimento</span><br>
-                de plataformas digitais
-            </h1>
-            <p class="mt-6 text-lg md:text-2xl text-gray-200">
-                Se você quer escalar seu negócio com tecnologia ou transformar sua ideia em realidade,
-                a <span class="text-[#00c7e5] font-semibold">BitFellow</span> está aqui para ajudar.
-            </p>
-            <div class="mt-8">
-                <a href="#portfolio"
-                    class="bg-[#00c7e5] hover:bg-blue-400 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition">
-                    Conheça Nossos Projetos
-                </a>
-            </div>
-        </div>
-    </section>
-
-
-
-
-    <!-- About Section -->
-    <section id="about" class="py-20 px-4 bg-[#1a1a2e]">
-        <div class="container mx-auto max-w-4xl text-center">
-            <h2 class="text-4xl md:text-5xl font-bold gradient-text mb-8">Sobre a BitFellow</h2>
-            <p class="text-lg text-gray-400 leading-relaxed max-w-3xl mx-auto">
-                Na BitFellow, somos mais do que desenvolvedores, somos parceiros de inovação. Acreditamos que a
-                tecnologia é a chave para resolver os desafios de negócios mais complexos. Nossa missão é colaborar de
-                perto com cada cliente para criar soluções digitais que não apenas atendam às necessidades de hoje, mas
-                também preparem sua empresa para o futuro.
-            </p>
-        </div>
-    </section>
-
-    <!-- Services Section -->
-    <section id="services" class="py-20 px-4 bg-[#141426]">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-bold text-center gradient-text mb-12">Nossos Serviços</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Serviço 1: Desenvolvimento Web -->
-                <div class="card text-center">
-                    <div class="text-[#00c7e5] text-5xl mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M12 10a2 2 0 100-4 2 2 0 000 4z" />
-                            <path fill-rule="evenodd"
-                                d="M16 6h-2V4a2 2 0 00-2-2H8a2 2 0 00-2 2v2H4a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V8a2 2 0 00-2-2zm-2 2H8V6h4v2zm-4 4h4v4h-4v-4z"
-                                clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Desenvolvimento Web</h3>
-                    <p class="text-gray-400">Criamos sites e aplicações web responsivas e otimizadas para performance,
-                        utilizando as tecnologias mais modernas do mercado.</p>
-                </div>
-                <!-- Serviço 2: Consultoria e Otimização -->
-                <div class="card text-center">
-                    <div class="text-[#00c7e5] text-5xl mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5 4a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2H5zm0 2h10v10H5V6z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Consultoria e Otimização</h3>
-                    <p class="text-gray-400">Oferecemos consultoria técnica para otimizar a performance de seus
-                        sistemas, garantindo escalabilidade e segurança.</p>
-                </div>
-                <!-- Serviço 3: Data & Analytics -->
-                <div class="card text-center">
-                    <div class="text-[#00c7e5] text-5xl mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M2 10a8 8 0 0116 0A8 8 0 012 10zm11.233 2.767a5 5 0 10-6.466-6.466 5 5 0 006.466 6.466z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Data & Analytics</h3>
-                    <p class="text-gray-400">Transformamos dados em decisões estratégicas, utilizando dashboards
-                        interativos para ganhar velocidade e otimizar resultados.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Why Choose Us Section -->
-    <section id="why-choose-us" class="py-20 px-4 bg-gray-800">
-        <div class="container mx-auto max-w-4xl">
-            <h2 class="text-4xl md:text-5xl font-bold text-center gradient-text mb-12">Resultados</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Diferencial 1: Qualidade Técnica -->
-                <div class="card text-center">
-                    <div class="text-[#00c7e5] text-5xl mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M10 2a8 8 0 100 16 8 8 0 000-16zM5.385 5.385a1 1 0 011.415 0L10 8.586l3.2-3.2A1 1 0 1114.615 6.815L10 11.43l-4.615-4.615A1 1 0 015.385 5.385z" />
-                            <path
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM5.385 5.385a1 1 0 011.415 0L10 8.586l3.2-3.2A1 1 0 1114.615 6.815L10 11.43l-4.615-4.615A1 1 0 015.385 5.385z"
-                                clip-rule="evenodd" fill-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Taxa de Conversão</h3>
-                    <p class="text-gray-400"> +25% </p>
-                </div>
-                <!-- Diferencial 2: Transparência -->
-                <div class="card text-center">
-                    <div class="text-[#00c7e5] text-5xl mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10 12a2 2 0 100-4 2 2 0 000 4z" />
-                            <path fill-rule="evenodd"
-                                d="M10 18a8 8 0 100-16 8 8 0 000 16zM4.332 7.625l-.26-1.564a1 1 0 011.832-.305L7 6.42l1.09-1.09a1 1 0 011.415 0l1.09 1.09 1.948-1.948a1 1 0 01.305-1.832l1.564.26a1 1 0 01.305 1.832L14.58 10l1.196 1.195a1 1 0 01-1.832.305L13 11.58l-1.09 1.09a1 1 0 01-1.415 0l-1.09-1.09L6.815 13.11a1 1 0 01-1.832-.305l.26-1.564a1 1 0 01.305-1.832L10 8.42l-1.195-1.196A1 1 0 018.415 5.385z"
-                                clip-rule="evenodd" fill-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Economia de Tempo</h3>
-                    <p class="text-gray-400"> -30%</p>
-                </div>
-                <!-- Diferencial 3: Suporte Contínuo -->
-                <div class="card text-center">
-                    <div class="text-[#00c7e5] text-5xl mb-4">
-                        <svg class="w-16 h-16 mx-auto" fill="currentColor" viewBox="0 0 20 20"
-                            xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M5 4a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2V6a2 2 0 00-2-2H5zm0 2h10v10H5V6z" />
-                        </svg>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-2">Orçamento</h3>
-                    <p class="text-gray-400"> + R$ 15k/m economizados</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Portfolio Section -->
-    <section id="portfolio" class="py-20 px-4 bg-[#0d121c]">
-        <div class="container mx-auto">
-            <h2 class="text-4xl md:text-5xl font-bold text-center gradient-text mb-12">Alguns de Nossos Projetos</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Projeto 1 - Adociquê - Site de Páscoa -->
-                <div class="card">
-                    <img src="ImagensAdocique/logo.png" alt="Screenshot do Site de Páscoa Adociquê"
-                        class="rounded-lg mb-4 w-full card-image-fixed">
-                    <h3 class="text-xl font-bold text-white mb-2">Adociquê - Site de Páscoa</h3>
-                    <p class="text-base text-gray-400 mb-4">
-                        <span class="font-bold text-[#00c7e5]">Desafio:</span> Melhorar a experiência de compra de doces
-                        de Páscoa, centralizando o catálogo e simplificando o processo de pedido. <br><br>
-                        <span class="font-bold text-[#00c7e5]">Solução:</span> Desenvolvemos um site e-commerce estático
-                        com catálogo interativo e carrinho de compras integrado ao WhatsApp. <br><br>
-                        <span class="font-bold text-[#00c7e5]">Impacto:</span> Clientes conseguem montar seus pedidos de
-                        forma intuitiva, e o vendedor recebe o resumo da compra de forma organizada, otimizando o tempo.
-                    </p>
-                    <a href="javascript:void(0)" onclick="openModal('adocique')"
-                        class="text-[#00c7e5] hover:text-blue-300 font-semibold transition-colors">Detalhes do Projeto
-                        &rarr;</a>
-                </div>
-
-                <!-- Projeto 2 - Blog Pessoal -->
-                <div class="card">
-                    <img src="https://placehold.co/600x400/1e293b/d1d5db?text=Blog+Pessoal"
-                        alt="Screenshot do Aplicativo Mobile" class="rounded-lg mb-4 w-full card-image-fixed">
-                    <h3 class="text-xl font-bold text-white mb-2">Blog Pessoal</h3>
-                    <p class="text-base text-gray-400 mb-4">
-                        <span class="font-bold text-[#00c7e5]">Desafio:</span> Criar uma plataforma pessoal de escrita
-                        com layout responsivo e fácil de usar. <br><br>
-                        <span class="font-bold text-[#00c7e5]">Solução:</span> Blog pessoal criado do zero, com posts em
-                        Markdown, sistema de comentários e design adaptável para qualquer dispositivo. <br><br>
-                        <span class="font-bold text-[#00c7e5]">Impacto:</span> Plataforma de fácil manutenção e
-                        visualmente agradável, ideal para compartilhar conteúdo com agilidade.
-                    </p>
-                    <a href="javascript:void(0)" onclick="openModal('blogpessoal')"
-                        class="text-[#00c7e5] hover:text-blue-300 font-semibold transition-colors">Detalhes do
-                        Projeto &rarr;</a>
-                </div>
-
-                <!-- Projeto 3 - Exemplo de Sistema de Gestão -->
-                <div class="card">
-                    <!-- Substitua a URL da imagem placeholder pela URL do screenshot do seu projeto -->
-                    <img src="https://placehold.co/600x400/1e293b/d1d5db?text=Sistema+Web"
-                        alt="Screenshot do Sistema Web" class="rounded-lg mb-4 w-full card-image-fixed">
-                    <h3 class="text-xl font-bold text-white mb-2">Sistema de Gestão de Clientes</h3>
-                    <p class="text-base text-gray-400 mb-4">
-                        <span class="font-bold text-[#00c7e5]">Desafio:</span> Oferecer uma forma mais eficiente de
-                        gerenciar clientes e rastrear vendas.<br><br>
-                        <span class="font-bold text-[#00c7e5]">Solução:</span> Desenvolvemos um sistema web com
-                        dashboards interativos e relatórios de vendas. <br><br>
-                        <span class="font-bold text-[#00c7e5]">Impacto:</span> Clientes podem tomar decisões baseadas em
-                        dados de forma mais ágil, melhorando a gestão do negócio.
-                    </p>
-                    <!-- Substitua '#' pela URL real do seu projeto online -->
-                    <a href="javascript:void(0)" onclick="openModal('sistemagestao')"
-                        class="text-[#00c7e5] hover:text-blue-300 font-semibold transition-colors">Ver Projeto
-                        Online &rarr;</a>
-                </div>
-
-                <!-- Projeto 4 - Dashboard de Acompanhamento de KPIs -->
-                <div class="card">
-                    <img src="ImagensDash/dash4.png" alt="Screenshot do Dashboard de KPIs"
-                        class="rounded-lg mb-4 w-full card-image-fixed">
-                    <h3 class="text-xl font-bold text-white mb-2">Dashboard de Acompanhamento de KPIs</h3>
-                    <p class="text-base text-gray-400 mb-4">
-                        <span class="font-bold text-[#00c7e5]">Desafio:</span> Fornecer uma visão executiva clara sobre
-                        metas e funis de conversão para otimizar o tempo gasto com relatórios. <br><br>
-                        <span class="font-bold text-[#00c7e5]">Solução:</span> Criação de um dashboard interativo com
-                        KPIs, funil e gráficos de metas versus resultados. <br><br>
-                        <span class="font-bold text-[#00c7e5]">Impacto:</span> Redução do tempo gasto com relatórios em
-                        35% e aumento da taxa de conversão em 22%, permitindo decisões mais rápidas.
-                    </p>
-                    <a href="javascript:void(0)" onclick="openModal('dashboardkpis')"
-                        class="text-[#00c7e5] hover:text-blue-300 font-semibold transition-colors">Detalhes do Projeto
-                        &rarr;</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action Section -->
-    <section class="py-20 px-4 bg-[#1a1a2e] text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
-            Pronto para começar seu projeto?
-        </h2>
-        <p class="text-lg text-gray-400 mb-8">
-            Entre em contato e vamos transformar sua ideia em realidade.
-        </p>
-        <a href="#contact" class="btn-primary">Fale Conosco</a>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-20 px-4 bg-gray-800">
-        <div class="container mx-auto max-w-xl text-center">
-            <h2 class="text-4xl md:text-5xl font-bold text-center gradient-text mb-12">Contato</h2>
-            <form id="contact-form" class="space-y-6 text-left">
-                <div>
-                    <label for="name" class="block text-gray-400 text-sm font-semibold mb-2">Nome</label>
-                    <input type="text" id="name" name="name"
-                        class="w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#00c7e5]"
-                        required>
-                </div>
-                <div>
-                    <label for="email" class="block text-gray-400 text-sm font-semibold mb-2">E-mail</label>
-                    <input type="email" id="email" name="email"
-                        class="w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#00c7e5]"
-                        required>
-                </div>
-                <div>
-                    <label for="message" class="block text-gray-400 text-sm font-semibold mb-2">Mensagem</label>
-                    <textarea id="message" name="message" rows="5"
-                        class="w-full bg-gray-700 border border-gray-600 rounded-md py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-[#00c7e5]"
-                        required></textarea>
-                </div>
-                <div class="text-center">
-                    <button type="submit" class="btn-primary w-full sm:w-auto">Enviar Mensagem</button>
-                </div>
-            </form>
-            <div id="form-message" class="mt-4 text-sm text-green-400 hidden">
-                Sua mensagem foi enviada! Responderemos em breve.
-            </div>
-        </div>
-    </section>
-
-    <a href="https://wa.me/351911111111" class="whatsapp-button" target="_blank" aria-label="Conversar no WhatsApp">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    </a>
-
-    <!-- Footer -->
-    <footer class="bg-gray-800 py-6 text-center text-gray-500 text-sm border-t border-gray-700">
-        <p>&copy; 2025 BitFellow. Todos os direitos reservados.</p>
-    </footer>
-
-    <!-- Modal para Carrossel de Projetos -->
-    <div id="projectModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modal-content-container">
-                <!-- Conteúdo do projeto será injetado aqui pelo JavaScript -->
-            </div>
-        </div>
+        <!-- CTA topo -> WhatsApp verde com ícone -->
+        <a href="https://wa.me/5521999743004" target="_blank" class="btn-whats-top">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M20.52 3.47A10.92 10.92 0 0 0 12.07 0C5.6 0 .36 5.22.34 11.68c0 1.67.37 3.27 1.1 4.77L0 24l7.7-2.02a11.7 11.7 0 0 0 4.36.83h.01c6.47 0 11.74-5.22 11.77-11.68.02-3.14-1.2-6.08-3.32-8.16Zm-8.45 18.1h-.01a9.8 9.8 0 0 1-4.2-.97l-.3-.14-4.56 1.2 1.22-4.45-.16-.31a9.68 9.68 0 0 1-1.2-4.73c.03-5.32 4.37-9.63 9.69-9.63 2.58 0 5 1 6.82 2.8a9.54 9.54 0 0 1 2.83 6.77c-.03 5.32-4.37 9.66-9.68 9.66Zm5.6-7.27c-.31-.16-1.84-.9-2.12-1-.28-.1-.48-.16-.68.16-.2.31-.78.99-.95 1.19-.17.21-.35.23-.66.08-.31-.16-1.3-.48-2.48-1.54-.92-.82-1.55-1.84-1.73-2.15-.18-.31-.02-.48.13-.64.14-.14.31-.37.47-.55.16-.17.21-.31.31-.52.1-.21.06-.39-.03-.55-.08-.16-.68-1.64-.93-2.24-.24-.58-.49-.5-.68-.5h-.58c-.2 0-.52.07-.8.39-.28.31-1.05 1.03-1.05 2.51 0 1.47 1.08 2.9 1.23 3.1.16.2 2.12 3.24 5.13 4.55.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.84-.75 2.1-1.47.26-.72.26-1.35.18-1.47-.08-.12-.28-.2-.6-.36Z"/></svg>
+          Entrar em contato
+        </a>
+      </div>
     </div>
-</body>
-<script src="script.js"></script>
+  </header>
 
+  <!-- Hero -->
+  <section class="hero relative overflow-hidden">
+    <div class="hero-blob -z-10"></div>
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto text-center reveal">
+        <h1 class="font-display text-4xl md:text-6xl leading-[1.08] tracking-tight text-slate-900">
+          Tecnologia para <span class="gradient-text">acelerar resultados</span>
+        </h1>
+
+        <p class="mt-4 text-slate-600 text-xl max-w-4xl mx-auto">
+          Full Stack Development, Data & Analytics e Integrações. Da ideia ao deploy — com performance, UX e segurança.
+        </p>
+
+        <div class="mt-8 flex items-center gap-4 justify-center flex-wrap">
+          <a href="https://wa.me/5521999743004" target="_blank" class="btn-primary shine">Entrar em contato</a>
+          <a href="#portfolio" class="btn-ghost">Ver cases</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
+          <div class="pill">⚡ Time-to-market ágil</div>
+          <div class="pill">🛡️ Segurança e qualidade</div>
+          <div class="pill">📈 Dados transformados em decisões</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOBRE (segunda sessão) -->
+  <section id="about" class="section">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Sobre a <span class="gradient-text">BitFellow</span></h2>
+        <p class="subtitle">
+          Parceria ponta a ponta: produto, design, engenharia e dados. Soluções sob medida que resolvem o hoje
+          e preparam sua operação para escalar com segurança.
+        </p>
+      </div>
+
+      <div class="about-grid mt-6">
+        <div class="card-gradient reveal">
+          <h3 class="card-title">Arquitetura</h3>
+          <p class="card-text">Cloud, banco, filas, cache e observabilidade — escolhas certas desde o início.</p>
+        </div>
+        <div class="card-gradient reveal delay-1">
+          <h3 class="card-title">Experiência</h3>
+          <p class="card-text">UX/UI acessível e rápido. Microinterações que encantam e convertem.</p>
+        </div>
+        <div class="card-gradient reveal delay-2">
+          <h3 class="card-title">Entrega</h3>
+          <p class="card-text">CI/CD, testes e qualidade. Entrega contínua, previsível e transparente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluções -->
+  <section id="solutions" class="section-alt">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Soluções <span class="gradient-text">que entregam</span></h2>
+        <p class="subtitle">Conectamos produto, engenharia e dados para acelerar seu negócio.</p>
+      </div>
+
+      <div class="solutions-grid">
+        <div class="card-gradient reveal">
+          <div class="icon-badge">🌐</div>
+          <h3 class="card-title">Web & Apps</h3>
+          <p class="card-text">Sites e apps responsivos com SEO, acessibilidade e performance A+.</p>
+          <ul class="card-list">
+            <li>Landing pages e sites institucionais</li>
+            <li>SPAs/React e PWAs</li>
+            <li>Design system e componentes</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-1">
+          <div class="icon-badge">🔌</div>
+          <h3 class="card-title">APIs & Integrações</h3>
+          <p class="card-text">Integrações com ERPs/CRMs, pagamentos e automações.</p>
+          <ul class="card-list">
+            <li>FastAPI/Flask, webhooks e filas</li>
+            <li>Auth, rate limit e observabilidade</li>
+            <li>Escalabilidade e segurança</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-2">
+          <div class="icon-badge">📊</div>
+          <h3 class="card-title">Data & Analytics</h3>
+          <p class="card-text">Dashboards e relatórios que viram decisão e reduzem retrabalho.</p>
+          <ul class="card-list">
+            <li>ETL/ELT e modelagem</li>
+            <li>KPIs, funil e metas</li>
+            <li>Monitoramento e alertas</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal">
+          <div class="icon-badge">🧠</div>
+          <h3 class="card-title">IA & Visão</h3>
+          <p class="card-text">Soluções de IA aplicadas ao negócio e visão computacional.</p>
+          <ul class="card-list">
+            <li>Detecção (YOLO), OCR e classificação</li>
+            <li>RPA e automações com IA</li>
+            <li>Servindo modelos em produção</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-1">
+          <div class="icon-badge">🛒</div>
+          <h3 class="card-title">E-commerce</h3>
+          <p class="card-text">Checkout fluido, catálogo, promoções e logística integrada.</p>
+          <ul class="card-list">
+            <li>Headless / Woo / gateways (Pix/Cartão)</li>
+            <li>Integração ERP/CRM</li>
+            <li>SEO e performance de loja</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-2">
+          <div class="icon-badge">🧱</div>
+          <h3 class="card-title">Infra & Segurança</h3>
+          <p class="card-text">Cloud, CI/CD, testes e observabilidade ponta a ponta.</p>
+          <ul class="card-list">
+            <li>Hardening e conformidade</li>
+            <li>Logs, métricas e traces</li>
+            <li>Alta disponibilidade</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="portfolio" class="section">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Projetos & <span class="gradient-text">Cases</span></h2>
+        <p class="subtitle">Clique no “+” para ver (Desafio • Solução • Impacto).</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Projeto 1 -->
+        <article class="project-card reveal">
+          <div class="project-carousel" data-carousel="adocique">
+            <div class="slides">
+              <img src="ImagensAdocique/ado1.jpeg" alt="Adociquê 1"/>
+              <img src="ImagensAdocique/ado2.jpeg" alt="Adociquê 2"/>
+              <img src="ImagensAdocique/ado3.jpeg" alt="Adociquê 3"/>
+              <img src="ImagensAdocique/ado4.png"  alt="Adociquê 4"/>
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Adociquê — Site de Páscoa</h3>
+            <button class="project-plus" data-open="adocique" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>E-commerce estático com catálogo e carrinho via WhatsApp.</p>
+        </article>
+
+        <!-- Projeto 2 -->
+        <article class="project-card reveal delay-1">
+          <div class="project-carousel" data-carousel="blogpessoal">
+            <div class="slides">
+              <img src="https://placehold.co/1200x700/e2e8f0/475569?text=Blog+Pessoal+1" alt="Blog 1"/>
+              <img src="https://placehold.co/1200x700/dde6f6/334155?text=Blog+Pessoal+2" alt="Blog 2"/>
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Blog Pessoal</h3>
+            <button class="project-plus" data-open="blogpessoal" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>Blog responsivo com posts em Markdown e comentários.</p>
+        </article>
+
+        <!-- Projeto 3 -->
+        <article class="project-card reveal delay-2">
+          <div class="project-carousel" data-carousel="sistemagestao">
+            <div class="slides">
+              <img src="https://placehold.co/1200x700/e2e8f0/475569?text=Sistema+Web+1" alt="SG 1"/>
+              <img src="https://placehold.co/1200x700/dde6f6/334155?text=Sistema+Web+2" alt="SG 2"/>
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Sistema de Gestão de Clientes</h3>
+            <button class="project-plus" data-open="sistemagestao" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>Dashboards de vendas e relatórios com insights acionáveis.</p>
+        </article>
+
+        <!-- Projeto 4 -->
+        <article class="project-card reveal">
+          <div class="project-carousel" data-carousel="dashboardkpis">
+            <div class="slides">
+              <img src="ImagensDash/dash1.png" alt="KPIs 1"/>
+              <img src="ImagensDash/dash2.png" alt="KPIs 2"/>
+              <img src="ImagensDash/dash3.png" alt="KPIs 3"/>
+              <img src="ImagensDash/dash4.png" alt="KPIs 4"/>
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Dashboard de KPIs</h3>
+            <button class="project-plus" data-open="dashboardkpis" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>KPIs executivos, funil e metas x resultados.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contato -->
+  <section id="contact" class="section-alt">
+    <div class="container mx-auto px-4 max-w-2xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Entrar em <span class="gradient-text">contato</span></h2>
+        <p class="subtitle">Preencha rápido e abriremos o WhatsApp com seu briefing.</p>
+      </div>
+
+      <form id="contact-form" class="space-y-6 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="name" class="label">Seu nome</label>
+            <input id="name" name="name" type="text" required class="input" placeholder="Ex.: Ana Silva"/>
+          </div>
+          <div>
+            <label for="email" class="label">E-mail (opcional)</label>
+            <input id="email" name="email" type="email" class="input" placeholder="voce@empresa.com.br"/>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="tech" class="label">Tecnologia</label>
+            <select id="tech" name="tech" required class="input">
+              <option value="" disabled selected>Selecione...</option>
+              <option>Website (HTML/CSS/JS)</option>
+              <option>WordPress</option>
+              <option>Mobile (PWA/App)</option>
+              <option>API Python (FastAPI/Flask)</option>
+              <option>Dashboard (React ou HTML+JS)</option>
+              <option>Banco de Dados & Integração</option>
+              <option>IA / Visão Computacional</option>
+              <option>E-commerce</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div>
+            <label for="problem" class="label">Problema / Objetivo</label>
+            <select id="problem" name="problem" required class="input">
+              <option value="" disabled selected>Selecione...</option>
+              <option>Site novo do zero</option>
+              <option>Melhorar velocidade/SEO</option>
+              <option>Integração com API</option>
+              <option>Dashboard com gráficos</option>
+              <option>Automação de processos</option>
+              <option>Loja online / Checkout</option>
+              <option>Reconhecimento de Placas/Rostos</option>
+              <option>Correção de bugs</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="scope" class="label">Descreva o que você quer</label>
+          <textarea id="scope" name="scope" rows="5" required class="input" placeholder="Ex.: Site institucional com 5 páginas, blog, formulário e integração com WhatsApp."></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="deadline" class="label">Prazo desejado</label>
+            <input id="deadline" name="deadline" type="text" class="input" placeholder="Ex.: 30 dias"/>
+          </div>
+          <div>
+            <label for="budget" class="label">Orçamento (opcional)</label>
+            <input id="budget" name="budget" type="text" class="input" placeholder="Ex.: até R$ 10.000"/>
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn-primary shine w-full sm:w-auto">Entrar em contato</button>
+        </div>
+      </form>
+      <div id="form-message" class="mt-4 text-sm text-emerald-600 hidden text-center">Abrindo WhatsApp…</div>
+    </div>
+  </section>
+
+  <!-- Footer centralizado, sem logo -->
+  <footer class="py-8 border-t border-slate-200 bg-white">
+    <div class="container mx-auto px-4">
+      <p class="text-slate-500 text-sm text-center">
+        &copy; 2025 BitFellow. Todos os direitos reservados. CNPJ 62.519.180/0001-70
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal de projetos -->
+  <div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-border"></div>
+      <div class="modal-head">
+        <h3 id="modalTitle" class="modal-title">Projeto</h3>
+        <button class="close" aria-label="Fechar" id="modalClose">×</button>
+      </div>
+      <div id="modal-content-container" class="modal-body"></div>
+      <div class="modal-actions">
+        <a id="modalLink" href="#" target="_blank" class="btn-ghost">Ver Projeto Online</a>
+        <a href="https://wa.me/5521999743004" target="_blank" class="btn-primary">Entrar em contato</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Assistente Virtual: Bit -->
+  <button id="bit-toggle" class="bit-toggle" aria-label="Abrir assistente Bit">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" />
+  </button>
+
+  <div id="bit-chat" class="bit-chat">
+    <div class="bit-head">
+      <div class="bit-avatar">B</div>
+      <div>
+        <div class="bit-title">Bit • Assistente</div>
+        <div class="bit-sub">Tire suas dúvidas ou peça um orçamento</div>
+      </div>
+      <button id="bit-close" class="bit-close" aria-label="Fechar">×</button>
+    </div>
+
+    <div id="bit-messages" class="bit-messages">
+      <div class="msg bot">Oi! Eu sou o <b>Bit</b> 👋 Posso ajudar com serviços, prazos, orçamento e integrações. Você pode digitar, usar os atalhos ou iniciar o <b>modo assistido</b> para montar seu briefing.</div>
+      <div class="bit-quick">
+        <button class="quick" data-q="Quais serviços vocês oferecem?">Serviços</button>
+        <button class="quick" data-q="Quanto tempo leva um site?">Prazos</button>
+        <button class="quick" data-q="Como funciona o orçamento?">Orçamento</button>
+        <button class="quick" data-q="Quero falar com humano">Falar com humano</button>
+        <button class="quick" data-q="Iniciar modo assistido">Modo assistido</button>
+        <button class="quick" data-q="FAQ">FAQ</button>
+      </div>
+    </div>
+
+    <form id="bit-form" class="bit-form">
+      <input id="bit-input" type="text" placeholder="Digite sua pergunta..." aria-label="Digite sua pergunta"/>
+      <button class="btn-primary" type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
 </html>
