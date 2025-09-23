@@ -64,7 +64,7 @@ function openWhatsWithFallback(messageText) {
 }
 
 // ===== Header: dark->light on scroll =====
-(function(){
+(function () {
   const header = document.querySelector('.site-header');
   const sentinel = document.getElementById('headerSentinel');
   if (!header || !sentinel) return;
@@ -90,7 +90,7 @@ function openWhatsWithFallback(messageText) {
 })();
 
 // ===== Reveal on Scroll =====
-(function(){
+(function () {
   const revealEls = document.querySelectorAll('.reveal');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('reveal-show'); });
@@ -109,7 +109,7 @@ document.getElementById('ctaHeroWhats')?.addEventListener('click', (e) => {
 });
 
 // ===== Formulário -> WhatsApp =====
-(function(){
+(function () {
   const contactForm = document.getElementById('contact-form');
   const formMessage = document.getElementById('form-message');
 
@@ -148,20 +148,20 @@ document.getElementById('ctaHeroWhats')?.addEventListener('click', (e) => {
 // ===== Projetos: conteúdo do modal (Desafio/Solução/Impacto) =====
 const PROJECTS = {
   adocique: {
-    title: 'Adociquê — Site de Páscoa',
+    title: 'E-commerce',
     html: `
-      <p><b class="text-[#00c7e5]">Desafio:</b> Melhorar a experiência de compra de doces de Páscoa, centralizando o catálogo e simplificando o processo de pedido.</p>
+      <p><b class="text-[#00c7e5]">Desafio:</b> Melhorar a experiência de compra de doces produtos, centralizando o catálogo e simplificando o processo de pedido.</p>
       <p><b class="text-[#00c7e5]">Solução:</b> Site e-commerce estático com catálogo interativo e carrinho de compras integrado ao WhatsApp.</p>
       <p><b class="text-[#00c7e5]">Impacto:</b> Clientes montam pedidos de forma intuitiva e o vendedor recebe o resumo organizado, otimizando o tempo.</p>
     `,
     link: '#'
   },
   blogpessoal: {
-    title: 'Blog Pessoal',
+    title: 'Gerenciador de Tarefas',
     html: `
-      <p><b class="text-[#00c7e5]">Desafio:</b> Criar uma plataforma pessoal de escrita com layout responsivo e fácil de usar.</p>
-      <p><b class="text-[#00c7e5]">Solução:</b> Blog feito do zero, posts em Markdown, comentários e design adaptável.</p>
-      <p><b class="text-[#00c7e5]">Impacto:</b> Publicação ágil, visual agradável e baixa manutenção.</p>
+      <p><b class="text-[#00c7e5]">Desafio:</b> Desenvolver uma API web para simplificar o gerenciamento de tarefas.</p>
+      <p><b class="text-[#00c7e5]">Solução:</b> Uma API RESTful construída com .NET 6 e Entity Framework, conectada a um banco de dados SQL Server, projetada para otimizar a organização de tarefas.</p>
+      <p><b class="text-[#00c7e5]">Tecnologias:</b> .NET 6, Entity Framework, SQL Server, REST API</p>
     `,
     link: '#'
   },
@@ -186,7 +186,7 @@ const PROJECTS = {
 };
 
 // ===== Modal handlers =====
-(function(){
+(function () {
   const projectModal = document.getElementById('projectModal');
   const modalTitle = document.getElementById('modalTitle');
   const modalClose = document.getElementById('modalClose');
@@ -228,7 +228,7 @@ const PROJECTS = {
 })();
 
 // ===== Carrossel dentro de cada CARD =====
-(function(){
+(function () {
   document.querySelectorAll('.project-carousel').forEach((wrap) => {
     const slides = wrap.querySelector('.slides');
     const imgs = slides.querySelectorAll('img');
@@ -236,21 +236,21 @@ const PROJECTS = {
     const next = wrap.querySelector('.next');
     let idx = 0;
 
-    function go(i){
+    function go(i) {
       idx = (i + imgs.length) % imgs.length;
-      slides.style.transform = `translateX(${-idx*100}%)`;
+      slides.style.transform = `translateX(${-idx * 100}%)`;
     }
 
-    prev.addEventListener('click', () => go(idx-1));
-    next.addEventListener('click', () => go(idx+1));
+    prev.addEventListener('click', () => go(idx - 1));
+    next.addEventListener('click', () => go(idx + 1));
 
     // auto-play leve
-    setInterval(() => go(idx+1), 5500);
+    setInterval(() => go(idx + 1), 5500);
   });
 })();
 
 // ===== Assistente Virtual: Bit =====
-(function(){
+(function () {
   const bitToggle = document.getElementById('bit-toggle');
   const bitChat = document.getElementById('bit-chat');
   const bitClose = document.getElementById('bit-close');
@@ -261,33 +261,33 @@ const PROJECTS = {
   bitToggle.addEventListener('click', () => bitChat.style.display = 'flex');
   bitClose.addEventListener('click', () => bitChat.style.display = 'none');
 
-  function push(type, html){
+  function push(type, html) {
     const div = document.createElement('div');
     div.className = 'msg ' + type;
     div.innerHTML = html;
     bitMessages.appendChild(div);
     bitMessages.scrollTop = bitMessages.scrollHeight;
   }
-  function pushUser(text){ push('user', text); }
-  function pushBot(text){ push('bot', text); }
+  function pushUser(text) { push('user', text); }
+  function pushBot(text) { push('bot', text); }
 
   const state = {
     mode: 'idle', // idle | assist_name | assist_tech | assist_problem | assist_scope | assist_deadline | assist_budget
-    brief: { name:'', tech:'', problem:'', scope:'', deadline:'', budget:'' }
+    brief: { name: '', tech: '', problem: '', scope: '', deadline: '', budget: '' }
   };
 
-  function resetAssist(){
+  function resetAssist() {
     state.mode = 'idle';
-    state.brief = { name:'', tech:'', problem:'', scope:'', deadline:'', budget:'' };
+    state.brief = { name: '', tech: '', problem: '', scope: '', deadline: '', budget: '' };
   }
-  function startAssist(){
+  function startAssist() {
     resetAssist();
     state.mode = 'assist_name';
     pushBot('Perfeito! Vamos montar seu briefing em 6 passos. <br/><b>1)</b> Qual seu <b>nome</b>?');
   }
-  function handleAssist(input){
+  function handleAssist(input) {
     const t = input.trim();
-    switch(state.mode){
+    switch (state.mode) {
       case 'assist_name':
         state.brief.name = t; state.mode = 'assist_tech';
         pushBot('<b>2)</b> Qual <b>tecnologia</b> você quer? (Website, WordPress, Mobile, API Python, Dashboard, Banco de Dados, IA/Visão, E-commerce ou outra)');
@@ -309,7 +309,7 @@ const PROJECTS = {
         pushBot('<b>6)</b> Tem <b>orçamento</b> estimado? (opcional) Se não, pode dizer "sem".');
         break;
       case 'assist_budget':
-        state.brief.budget = t.toLowerCase()==='sem' ? '' : t;
+        state.brief.budget = t.toLowerCase() === 'sem' ? '' : t;
         const msg = [
           `*Briefing via Assistente Bit*`,
           ``,
@@ -329,7 +329,7 @@ const PROJECTS = {
     }
   }
 
-  function intentReply(text){
+  function intentReply(text) {
     const t = text.toLowerCase();
     if (t.includes('assistido') || t.includes('briefing') || t.includes('iniciar')) { startAssist(); return null; }
     if (t.includes('serviço') || t.includes('servicos') || t.includes('oferecem')) {
@@ -386,7 +386,7 @@ const PROJECTS = {
   bitForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const text = bitInput.value.trim();
-    if(!text) return;
+    if (!text) return;
     pushUser(text);
 
     if (state.mode.startsWith('assist_')) {
