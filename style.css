@@ -288,26 +288,36 @@ body {
   margin: .2rem 0;
 }
 
-/* Projects */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
-}
-
-@media (min-width: 1024px) {
-  .project-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  /* Responsivo */
+  gap: 1.5rem;
+  /* Espaçamento entre os cards */
 }
 
 .project-card {
   background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 22px;
-  padding: 1.25rem;
-  box-shadow: 0 18px 28px -18px rgba(2, 132, 199, .35), 0 3px 8px rgba(2, 132, 199, .06);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
+
+/* Ajustes extras no mobile */
+@media (max-width: 640px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+    /* Empilha os cards no celular */
+  }
+
+  .project-card {
+    margin: 0 auto;
+    /* Centraliza no mobile */
+    width: 100%;
+    /* Pode usar 90% se quiser espaço nas laterais */
+  }
+}
+
 
 .project-carousel {
   position: relative;
@@ -746,6 +756,7 @@ body {
 /* Brand gradient text */
 .gradient-text {
   background: linear-gradient(90deg, var(--brand-cyan), var(--brand-sky));
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -753,4 +764,67 @@ body {
 /* Sentinel */
 #headerSentinel {
   height: 1px;
+}
+
+/* MOBILE FIRST (até 640px) */
+@media (max-width: 640px) {
+  .title {
+    font-size: 1.8rem;
+    /* título menor */
+    line-height: 2.2rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+    padding: 0 10px;
+    /* mais respiro nas laterais */
+  }
+
+  .about-grid,
+  .solutions-grid,
+  .projects-grid {
+    grid-template-columns: 1fr;
+    /* empilha os cards */
+    gap: 1.2rem;
+  }
+
+  .card-gradient {
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 1.9rem;
+    line-height: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero .buttons {
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+}
+
+/* TABLET (641px a 1024px) */
+@media (min-width: 641px) and (max-width: 1024px) {
+
+  .about-grid,
+  .solutions-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    /* 2 colunas */
+    gap: 1.5rem;
+  }
+
+  .title {
+    font-size: 2.2rem;
+  }
+
+  .hero h1 {
+    font-size: 2.3rem;
+  }
 }
