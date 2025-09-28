@@ -166,11 +166,12 @@ const PROJECTS = {
     link: '#'
   },
   sistemagestao: {
-    title: 'Sistema de Gestão de Clientes',
+    title: 'Gestão de Carteiras',
     html: `
-      <p><b class="text-[#00c7e5]">Desafio:</b> Aumentar a eficiência no gerenciamento de clientes e no rastreio de vendas.</p>
-      <p><b class="text-[#00c7e5]">Solução:</b> Sistema web com dashboards interativos e relatórios de vendas.</p>
+      <p><b class="text-[#00c7e5]">Desafio:</b> Construir uma plataforma web para gestão profissional de carteiras que permita acompanhar posições, alocação, performance e alertas em tempo real.</p>
+      <p><b class="text-[#00c7e5]">Solução:</b> Aplicação que agrega dados de múltiplas fontes, calcula métricas de performance (retorno, volatilidade, drawdown), exibe gráficos interativos de alocação e histórico e permite importação de extratos/negociações para conciliação automática.</p>
       <p><b class="text-[#00c7e5]">Impacto:</b> Decisões mais rápidas, baseadas em dados, melhorando a gestão.</p>
+      <p><b class="text-[#00c7e5]">Tecnologias:</b> React (Vite/Expo Web se preferir), Chart.js / Recharts, Node.js + Express, SQLite / PostgreSQL, TypeScript, autenticação JWT, deploy em Vercel / Heroku.</p>
     `,
     link: '#'
   },
@@ -180,6 +181,25 @@ const PROJECTS = {
       <p><b class="text-[#00c7e5]">Desafio:</b> Trazer visão executiva clara sobre metas e funil, reduzindo tempo de relatório.</p>
       <p><b class="text-[#00c7e5]">Solução:</b> Dashboard com KPIs, funil e metas vs. resultados.</p>
       <p><b class="text-[#00c7e5]">Impacto:</b> -35% no tempo de relatórios e +22% na taxa de conversão.</p>
+    `,
+    link: '#'
+  },
+  QuantoVouGastar: {
+    title: 'Calculadora de Gastos',
+    html: `
+      <p><b class="text-[#00c7e5]">Desafio:</b> Trazer quanto vai ser gasto de combustível entre rota de origem e destino.</p>
+      <p><b class="text-[#00c7e5]">Solução:</b> Calcular de forma rapido e com dados reais o consumo de combustível</p>
+      <p><b class="text-[#00c7e5]">Tecnologias:</b> JavaScript, Firebase, API do Google</p>
+    `,
+    link: '#'
+  },
+  CrudInteligente: {
+    title: 'CRUD Inteligente',
+    html: `
+      <p><b class="text-[#00c7e5]">Desafio:</b> Desenvolver um CRUD controlado por IA.</p>
+      <p><b class="text-[#00c7e5]">Solução:</b> Calcular de forma rapido e com dados reais o consumo de combustível</p>
+      <p><b class="text-[#00c7e5]">Impacto:</b> Decisões mais rápidas, baseadas em dados, melhorando a gestão.</p>
+      <p><b class="text-[#00c7e5]">Tecnologias:</b> JavaScript, Firebase, API do Google</p>
     `,
     link: '#'
   }
