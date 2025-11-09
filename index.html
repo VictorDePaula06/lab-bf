@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BitFellow</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sora:wght@700;800&display=swap"
+    rel="stylesheet" />
+
+  <!-- Tailwind utility (opcional, mantivemos) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="bg-surface text-slate-800 antialiased">
+  <!-- Header -->
+  <header class="site-header header--dark fixed w-full z-50">
+    <div class="container mx-auto px-4">
+      <div class="h-16 flex items-center justify-between">
+        <!-- Logo -->
+        <a href="#" class="flex items-center gap-3">
+          <img src="Logo/logo-white-semfundo.png" alt="BitFellow Logo" class="logo-img h-10 w-auto" />
+          <span class="brand-name font-display text-lg tracking-tight">Bit<span
+              class="gradient-text">Fellow</span></span>
+        </a>
+
+        <!-- Nav -->
+        <nav class="main-nav hidden md:flex items-center gap-8 text-[0.98rem] font-medium">
+          <a href="#about" class="nav-link">Sobre</a>
+          <a href="#solutions" class="nav-link">Soluções</a>
+          <a href="#portfolio" class="nav-link">Projetos</a>
+          <a href="#contact" class="nav-link">Contato</a>
+        </nav>
+
+        <!-- CTA topo (WhatsApp) -->
+        <a href="#" id="ctaTopWhats" class="btn-whats-top" aria-label="Entrar em contato no WhatsApp">
+          <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true">
+            <path fill="currentColor"
+              d="M20.52 3.47A10.92 10.92 0 0 0 12.07 0C5.6 0 .36 5.22.34 11.68c0 1.67.37 3.27 1.1 4.77L0 24l7.7-2.02a11.7 11.7 0 0 0 4.36.83h.01c6.47 0 11.74-5.22 11.77-11.68.02-3.14-1.2-6.08-3.32-8.16Zm-8.45 18.1h-.01a9.8 9.8 0 0 1-4.2-.97l-.3-.14-4.56 1.2 1.22-4.45-.16-.31a9.68 9.68 0 0 1-1.2-4.73c.03-5.32 4.37-9.63 9.69-9.63 2.58 0 5 1 6.82 2.8a9.54 9.54 0 0 1 2.83 6.77c-.03 5.32-4.37 9.66-9.68 9.66Zm5.6-7.27c-.31-.16-1.84-.9-2.12-1-.28-.1-.48-.16-.68.16-.2.31-.78.99-.95 1.19-.17.21-.35.23-.66.08-.31-.16-1.3-.48-2.48-1.54-.92-.82-1.55-1.84-1.73-2.15-.18-.31-.02-.48.13-.64.14-.14.31-.37.47-.55.16-.17.21-.31.31-.52.1-.21.06-.39-.03-.55-.08-.16-.68-1.64-.93-2.24-.24-.58-.49-.5-.68-.5h-.58c-.2 0-.52.07-.8.39-.28.31-1.05 1.03-1.05 2.51 0 1.47 1.08 2.9 1.23 3.1.16.2 2.12 3.24 5.13 4.55.72.31 1.28.49 1.72.63.72.23 1.38.2 1.9.12.58-.09 1.84-.75 2.1-1.47.26-.72.26-1.35.18-1.47-.08-.12-.28-.2-.6-.36Z" />
+          </svg>
+          Entrar em contato
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero com vídeo -->
+  <section class="hero relative overflow-hidden">
+    <video class="hero-video" src="Video/HeroSection.mp4" autoplay muted loop playsinline></video>
+    <div class="hero-overlay"></div>
+
+    <div class="container mx-auto px-4">
+      <div class="max-w-6xl mx-auto text-center hero-content">
+        <h1 class="hero-title font-display">
+          Tecnologia para <span class="gradient-text outline-light">acelerar resultados</span>
+        </h1>
+
+        <p class="mt-4 text-slate-100/95 text-xl max-w-4xl mx-auto">
+          Full Stack Development, Data & Analytics e Integrações. Da ideia ao deploy — com performance, UX e segurança.
+        </p>
+
+        <div class="mt-8 flex items-center gap-4 justify-center flex-wrap">
+          <a href="#" id="ctaHeroWhats" class="btn-primary shine">Entrar em contato</a>
+          <a href="#portfolio" class="btn-ghost">Ver cases</a>
+        </div>
+
+        <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-3 max-w-3xl mx-auto">
+          <div class="pill pill-dark">⚡ Time-to-market ágil</div>
+          <div class="pill pill-dark">🛡️ Segurança e qualidade</div>
+          <div class="pill pill-dark">📈 Dados em decisões</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sentinela para trocar o estado da header -->
+  <div id="headerSentinel"></div>
+
+  <!-- SOBRE (2ª sessão) -->
+  <section id="about" class="section">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Sobre a <span class="gradient-text">BitFellow</span></h2>
+        <p class="subtitle">
+          Parceria ponta a ponta: produto, design, engenharia e dados. Soluções sob medida que resolvem o hoje
+          e preparam sua operação para escalar com segurança.
+        </p>
+      </div>
+
+      <div class="about-grid mt-6">
+        <div class="card-gradient reveal">
+          <h3 class="card-title">Arquitetura</h3>
+          <p class="card-text">Cloud, banco, filas, cache e observabilidade — escolhas certas desde o início.</p>
+        </div>
+        <div class="card-gradient reveal delay-1">
+          <h3 class="card-title">Experiência</h3>
+          <p class="card-text">UX/UI acessível e rápido. Microinterações que encantam e convertem.</p>
+        </div>
+        <div class="card-gradient reveal delay-2">
+          <h3 class="card-title">Entrega</h3>
+          <p class="card-text">CI/CD, testes e qualidade. Entrega contínua, previsível e transparente.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Soluções -->
+  <section id="solutions" class="section-alt">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Soluções <span class="gradient-text">que entregam</span></h2>
+        <p class="subtitle">Conectamos produto, engenharia e dados para acelerar seu negócio.</p>
+      </div>
+
+      <div class="solutions-grid">
+        <div class="card-gradient reveal">
+          <div class="icon-badge">🌐</div>
+          <h3 class="card-title">Web & Apps</h3>
+          <p class="card-text">Sites e apps responsivos com SEO, acessibilidade e performance A+.</p>
+          <ul class="card-list">
+            <li>Landing pages e sites institucionais</li>
+            <li>SPAs/React e PWAs</li>
+            <li>Design system e componentes</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-1">
+          <div class="icon-badge">🔌</div>
+          <h3 class="card-title">APIs & Integrações</h3>
+          <p class="card-text">Integrações com ERPs/CRMs, pagamentos e automações.</p>
+          <ul class="card-list">
+            <li>FastAPI/Flask, webhooks e filas</li>
+            <li>Auth, rate limit e observabilidade</li>
+            <li>Escalabilidade e segurança</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-2">
+          <div class="icon-badge">📊</div>
+          <h3 class="card-title">Data & Analytics</h3>
+          <p class="card-text">Dashboards e relatórios que viram decisão e reduzem retrabalho.</p>
+          <ul class="card-list">
+            <li>ETL/ELT e modelagem</li>
+            <li>KPIs, funil e metas</li>
+            <li>Monitoramento e alertas</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal">
+          <div class="icon-badge">🧠</div>
+          <h3 class="card-title">IA & Visão</h3>
+          <p class="card-text">Soluções de IA aplicadas ao negócio e visão computacional.</p>
+          <ul class="card-list">
+            <li>Detecção (YOLO), OCR e classificação</li>
+            <li>RPA e automações com IA</li>
+            <li>Servindo modelos em produção</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-1">
+          <div class="icon-badge">🛒</div>
+          <h3 class="card-title">E-commerce</h3>
+          <p class="card-text">Checkout fluido, catálogo, promoções e logística integrada.</p>
+          <ul class="card-list">
+            <li>Headless / Woo / gateways (Pix/Cartão)</li>
+            <li>Integração ERP/CRM</li>
+            <li>SEO e performance de loja</li>
+          </ul>
+        </div>
+
+        <div class="card-gradient reveal delay-2">
+          <div class="icon-badge">🧱</div>
+          <h3 class="card-title">Infra & Segurança</h3>
+          <p class="card-text">Cloud, CI/CD, testes e observabilidade ponta a ponta.</p>
+          <ul class="card-list">
+            <li>Hardening e conformidade</li>
+            <li>Logs, métricas e traces</li>
+            <li>Alta disponibilidade</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos -->
+  <section id="portfolio" class="section">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Projetos & <span class="gradient-text">Cases</span></h2>
+        <p class="subtitle">Clique no “+” para ver (Desafio • Solução • Impacto).</p>
+      </div>
+
+      <div class="project-grid">
+        <!-- Projeto 1 -->
+        <article class="project-card reveal">
+          <div class="project-carousel" data-carousel="adocique">
+            <div class="slides">
+              <img src="ImagensAdocique/logo.png" alt="Adociquê 1" />
+              <img src="ImagensAdocique/ado4.png" alt="Adociquê 2" />
+              <img src="ImagensMenu/Menu1.png" alt="Menu1" />
+              <img src="ImagensMenu/Menu2.png" alt="Menu2" />
+              <img src="ImagensMenu/Menu3.png" alt="Menu3" />
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Desenvolvimento Web</h3>
+            <button class="project-plus" data-open="adocique" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>E-commerce estático com catálogo e carrinho via WhatsApp.</p>
+        </article>
+
+        <!-- Projeto 2 -->
+        <article class="project-card reveal delay-1">
+          <div class="project-carousel" data-carousel="blogpessoal">
+            <div class="slides">
+              <img src="ImagensApi/api1.png" alt="api1" />
+              <img src="ImagensApi/api2.png" alt="Blog 2" />
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Gerenciador de Tarefas</h3>
+            <button class="project-plus" data-open="blogpessoal" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>Sistema gerenciador de tarefas, onde você poderá cadastrar uma lista de tarefas que permitirá organizar
+            melhor a sua rotina.</p>
+        </article>
+
+        <!-- Projeto 3 -->
+        <article class="project-card reveal delay-2">
+          <div class="project-carousel" data-carousel="sistemagestao">
+            <div class="slides">
+              <img src="ImagensFH/fh1.png" alt="SG 1" />
+              <img src="ImagensFH/fh2.png" alt="SG 1" />
+              <img src="ImagensFH/fh3.png" alt="SG 1" />
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Gestão de Carteiras</h3>
+            <button class="project-plus" data-open="sistemagestao" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>Dashboards de carteiras para comparar e monitorar ativos.</p>
+        </article>
+
+        <!-- Projeto 4 -->
+        <article class="project-card reveal">
+          <div class="project-carousel" data-carousel="dashboardkpis">
+            <div class="slides">
+              <img src="ImagensDash/dash1.png" alt="KPIs 1" />
+              <img src="ImagensDash/dash2.png" alt="KPIs 2" />
+              <img src="ImagensDash/dash3.png" alt="KPIs 3" />
+              <img src="ImagensDash/dash4.png" alt="KPIs 4" />
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Dashboard de KPIs</h3>
+            <button class="project-plus" data-open="dashboardkpis" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>KPIs executivos, funil e metas x resultados.</p>
+        </article>
+
+        <!-- Projeto 5 -->
+        <article class="project-card reveal">
+          <div class="project-carousel" data-carousel="QuantoVouGastar">
+            <div class="slides">
+              <img src="ImagensQV/qv1.png" alt="qv 1" />
+              <img src="ImagensQV/qv2.png" alt="qv 2" />
+              <img src="ImagensQV/qv3.png" alt="qv 3" />
+              <img src="ImagensQV/qv4.png" alt="qv 4" />
+              <img src="ImagensQV/qv5.png" alt="qv 5" />
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>Calcular Custo</h3>
+            <button class="project-plus" data-open="QuantoVouGastar" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>Premissa é calcular quanto vai ser gasto com combustível.</p>
+        </article>
+
+        <!-- Projeto 6 -->
+        <article class="project-card reveal">
+          <div class="project-carousel" data-carousel="CrudInteligente">
+            <div class="slides">
+              <img src="ImagensCrud/c1.png" alt="KPIs 1" />
+              <img src="ImagensCrud/c2.jpg" alt="KPIs 3" />
+              <img src="ImagensCrud/c3.png" alt="KPIs 3" />
+            </div>
+            <button class="nav prev" aria-label="Anterior">‹</button>
+            <button class="nav next" aria-label="Próxima">›</button>
+          </div>
+
+          <div class="project-head">
+            <h3>CRUD Inteligente</h3>
+            <button class="project-plus" data-open="CrudInteligente" aria-label="Abrir projeto">+</button>
+          </div>
+          <p>CRUD controlado por IA.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+  </div>
+  </div>
+  </section>
+
+
+
+  <!-- Contato -->
+  <section id="contact" class="section-alt">
+    <div class="container mx-auto px-4 max-w-2xl">
+      <div class="section-head reveal text-center">
+        <h2 class="title">Entrar em <span class="gradient-text">contato</span></h2>
+        <p class="subtitle">Preencha rápido e abriremos o WhatsApp com seu briefing.</p>
+      </div>
+
+      <form id="contact-form" class="space-y-6 reveal">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="name" class="label">Seu nome</label>
+            <input id="name" name="name" type="text" required class="input" placeholder="Ex.: Ana Silva" />
+          </div>
+          <div>
+            <label for="email" class="label">E-mail (opcional)</label>
+            <input id="email" name="email" type="email" class="input" placeholder="voce@empresa.com.br" />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="tech" class="label">Tecnologia</label>
+            <select id="tech" name="tech" required class="input">
+              <option value="" disabled selected>Selecione...</option>
+              <option>Website (HTML/CSS/JS)</option>
+              <option>WordPress</option>
+              <option>Mobile (PWA/App)</option>
+              <option>API Python (FastAPI/Flask)</option>
+              <option>Dashboard (React ou HTML+JS)</option>
+              <option>Banco de Dados & Integração</option>
+              <option>IA / Visão Computacional</option>
+              <option>E-commerce</option>
+              <option>Outro</option>
+            </select>
+          </div>
+          <div>
+            <label for="problem" class="label">Problema / Objetivo</label>
+            <select id="problem" name="problem" required class="input">
+              <option value="" disabled selected>Selecione...</option>
+              <option>Site novo do zero</option>
+              <option>Melhorar velocidade/SEO</option>
+              <option>Integração com API</option>
+              <option>Dashboard com gráficos</option>
+              <option>Automação de processos</option>
+              <option>Loja online / Checkout</option>
+              <option>Reconhecimento de Placas/Rostos</option>
+              <option>Correção de bugs</option>
+              <option>Outro</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label for="scope" class="label">Descreva o que você quer</label>
+          <textarea id="scope" name="scope" rows="5" required class="input"
+            placeholder="Ex.: Site institucional com 5 páginas, blog, formulário e integração com WhatsApp."></textarea>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div>
+            <label for="deadline" class="label">Prazo desejado</label>
+            <input id="deadline" name="deadline" type="text" class="input" placeholder="Ex.: 30 dias" />
+          </div>
+          <div>
+            <label for="budget" class="label">Orçamento (opcional)</label>
+            <input id="budget" name="budget" type="text" class="input" placeholder="Ex.: até R$ 10.000" />
+          </div>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="btn-primary shine w-full sm:w-auto">Entrar em contato</button>
+        </div>
+      </form>
+      <div id="form-message" class="mt-4 text-sm text-emerald-600 hidden text-center">Abrindo WhatsApp…</div>
+    </div>
+  </section>
+
+  <!-- Footer centralizado -->
+  <footer class="py-8 border-t border-slate-200 bg-white">
+    <div class="container mx-auto px-4">
+      <p class="text-slate-500 text-sm text-center">
+        &copy; 2025 BitFellow. Todos os direitos reservados. CNPJ 62.519.180/0001-70
+      </p>
+    </div>
+  </footer>
+
+  <!-- Modal de projetos -->
+  <div id="projectModal" class="modal" aria-hidden="true">
+    <div class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-border"></div>
+      <div class="modal-head">
+        <h3 id="modalTitle" class="modal-title">Projeto</h3>
+        <button class="close" aria-label="Fechar" id="modalClose">×</button>
+      </div>
+      <div id="modal-content-container" class="modal-body"></div>
+      <div class="modal-actions">
+        <a id="modalLink" href="#" target="_blank" class="btn-ghost">Ver Projeto Online</a>
+        <a href="#" id="modalWhats" target="_blank" class="btn-primary">Entrar em contato</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Assistente Virtual: Bit -->
+  <button id="bit-toggle" class="bit-toggle" aria-label="Abrir assistente Bit">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="" />
+  </button>
+
+  <div id="bit-chat" class="bit-chat">
+    <div class="bit-head">
+      <div class="bit-avatar">B</div>
+      <div>
+        <div class="bit-title">Bit • Assistente</div>
+        <div class="bit-sub">Tire suas dúvidas ou peça um orçamento</div>
+      </div>
+      <button id="bit-close" class="bit-close" aria-label="Fechar">×</button>
+    </div>
+
+    <div id="bit-messages" class="bit-messages">
+      <div class="msg bot">
+        Oi! Eu sou o <b>Bit</b> 👋 Posso ajudar com serviços, prazos, orçamento e integrações.
+        Você pode digitar, usar os atalhos ou iniciar o <b>modo assistido</b> para montar seu briefing.
+      </div>
+      <div class="bit-quick">
+        <button class="quick" data-q="Quais serviços vocês oferecem?">Serviços</button>
+        <button class="quick" data-q="Quanto tempo leva um site?">Prazos</button>
+        <button class="quick" data-q="Como funciona o orçamento?">Orçamento</button>
+        <button class="quick" data-q="Quero falar com humano">Falar com humano</button>
+        <button class="quick" data-q="Iniciar modo assistido">Modo assistido</button>
+        <button class="quick" data-q="FAQ">FAQ</button>
+      </div>
+    </div>
+
+    <form id="bit-form" class="bit-form">
+      <input id="bit-input" type="text" placeholder="Digite sua pergunta..." aria-label="Digite sua pergunta" />
+      <button class="btn-primary" type="submit">Enviar</button>
+    </form>
+  </div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+
+</html>
